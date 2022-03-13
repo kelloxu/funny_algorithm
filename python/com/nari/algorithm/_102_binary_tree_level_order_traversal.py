@@ -9,7 +9,7 @@
 """
 
 from collections import deque
-from model.Node import Node
+from com.nari.algorithm.model.Node import Node
 
 
 def level_order(root):

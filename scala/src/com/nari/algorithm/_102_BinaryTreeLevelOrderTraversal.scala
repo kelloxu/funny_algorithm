@@ -1,9 +1,16 @@
 package com.nari.algorithm
 
-import model.Node
-
 import scala.collection.mutable
 
+import model.Node
+
+/**
+ * PACKAGE_NAME: com.nari.algorithm
+ * User: xujiong
+ * Date: 2022/3/13
+ * Time: 12:16
+ * Description: 
+ */
 object _102_BinaryTreeLevelOrderTraversal {
 
   def levelOrder(root: Node): List[List[Int]] = {
@@ -14,7 +21,7 @@ object _102_BinaryTreeLevelOrderTraversal {
 
     val queue: mutable.Queue[Node] = new mutable.Queue[Node]()
     queue += root
-    
+
     while (queue.nonEmpty) {
       val current_level_size = queue.size
       var current_node_vals: List[Int] = List()
@@ -30,9 +37,9 @@ object _102_BinaryTreeLevelOrderTraversal {
       }
       res = res :+ current_node_vals
     }
-    
+
     res
-    
+
   }
 
   def main(args: Array[String]): Unit = {

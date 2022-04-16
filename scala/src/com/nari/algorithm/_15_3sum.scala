@@ -1,18 +1,16 @@
 package com.nari.algorithm
 
 /**
- * 题目地址：https://leetcode-cn.com/problems/3sum/
- * 题目概述：Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k] ] such that i != j, i != k,
- * and j != k, and nums[i] + nums[j] + nums[k] == 0.
- * Notice that the solution set must not contain duplicate triplets.
- *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/3sum
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
 object _15_3sum {
 
+  /**
+   * 解体思路：排序 + 一次遍历 + 双指针
+   * 重点技巧：排过序后，相同的元素都在一起了，去重就更好处理了
+   */
   def threeSum(nums: Array[Int]): List[List[Int]] = {
 
     var res: List[List[Int]] = List()

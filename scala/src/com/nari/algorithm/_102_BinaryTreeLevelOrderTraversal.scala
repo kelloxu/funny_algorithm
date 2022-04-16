@@ -5,11 +5,8 @@ import scala.collection.mutable
 import model.Node
 
 /**
- * PACKAGE_NAME: com.nari.algorithm
- * User: xujiong
- * Date: 2022/3/13
- * Time: 12:16
- * Description: 
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
  */
 object _102_BinaryTreeLevelOrderTraversal {
 

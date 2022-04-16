@@ -1,3 +1,8 @@
+"""
+实现字典树, 实现类为 TrieScala，本类用于测试验证
+Word and prefix consist only of lowercase English letters.
+"""
+
 from com.nari.algorithm.model.Trie import Trie
 
 

@@ -7,6 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+ */
 public class _102_BinaryTreeLevelOrderTraversal {
 
     public static List<List<Integer>> levelOrder(TreeNode root) {

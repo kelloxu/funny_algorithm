@@ -1,12 +1,6 @@
 """
- 题目概述：You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
-         On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock
-         at any time. However, you can buy it then immediately sell it on the same day.
-         Find and return the maximum profit you can achieve.
-
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
 
 from typing import List

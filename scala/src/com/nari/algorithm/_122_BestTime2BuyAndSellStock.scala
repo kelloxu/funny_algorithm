@@ -1,5 +1,9 @@
 package com.nari.algorithm
 
+/*
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
+*/
 object _122_BestTime2BuyAndSellStock {
 
   def maxProfit(prices: Array[Int]) : Int = {

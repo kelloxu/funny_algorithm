@@ -3,14 +3,10 @@ package com.nari.algorithm;
 import com.nari.algorithm.model.TreeNode;
 
 /**
- * PACKAGE_NAME: com.nari.algorithm
- * User: xujiong
- * Date: 2022/3/13
- * Time: 11:27
- * Description:
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
  */
 public class _236_LowestCommonAncestorOfBinaryTree {
-
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;

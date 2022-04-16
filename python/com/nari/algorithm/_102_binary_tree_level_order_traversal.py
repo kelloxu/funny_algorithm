@@ -1,11 +1,6 @@
 """
-* 题目地址：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
-* 题目概述：Given the root of a binary tree, return the level order traversal of
-*         its nodes' values. (i.e., from left to right, level by level).
-
-* 来源：力扣（LeetCode）
-* 链接：https://leetcode-cn.com/problems/3sum
-* 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
 """
 
 from collections import deque

@@ -1,3 +1,8 @@
+"""
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+"""
+
 from com.nari.algorithm.model.Node import Node
 
 

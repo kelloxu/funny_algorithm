@@ -1,6 +1,9 @@
 """
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/
+题目描述：动态规划系列 —— 买卖股票4
+ *      最多可以买卖 k 次
+ *       手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
 """
 
 from typing import List
@@ -19,7 +22,7 @@ class Solution:
             return self.greedy(prices)
             # k = n // 2
 
-        # 定义状态变量（三维）和结果变量
+        # 定义状态变量（三维, n*(k+1)*2）和结果变量
         dp, res = [[[0] * 2 for _ in range(k + 1)] for _ in range(n)], []
 
         # dp[i][k][0] 表示第 i 天已交易 k 次时不持有股票时的最大收益
@@ -30,6 +33,7 @@ class Solution:
             # 如果持有股票，不管交易多少次，收益均为 - prices[0]
             dp[0][i][0], dp[0][i][1] = 0, - prices[0]
         for i in range(1, n):
+            print("第{0}天交易".format(i + 1))
             for j in range(k + 1):
                 if not j:
                     dp[i][j][0] = dp[i - 1][j][0]
@@ -37,7 +41,7 @@ class Solution:
                     dp[i][j][0] = max(dp[i - 1][j][0], dp[i - 1][j - 1][1] + prices[i])
                 dp[i][j][1] = max(dp[i - 1][j][1], dp[i - 1][j][0] - prices[i])
 
-        # 所有交易次数最有一天不持有股票的集合的最大值即为问题的解
+        # 所有交易次数最后一天不持有股票的集合的最大值即为问题的解
         for m in range(k + 1):
             res.append(dp[n - 1][m][0])
         return max(res)

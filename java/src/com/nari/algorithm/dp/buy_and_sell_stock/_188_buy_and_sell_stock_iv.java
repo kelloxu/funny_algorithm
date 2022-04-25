@@ -8,8 +8,8 @@ import java.util.List;
  * Author: Xu Jiong
  * Date: 2022/4/24 9:39
  * Description: 动态规划系列 —— 买卖股票4
- *              最多可以买卖 k 次
- *              手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
+ * 最多可以买卖 k 次
+ * 手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
  */
 public class _188_buy_and_sell_stock_iv {
 
@@ -20,7 +20,7 @@ public class _188_buy_and_sell_stock_iv {
         // 定义状态变量（三维）
         int[][][] dp = new int[n][k + 1][2];
 
-        // 定义结果
+        // 定义结果列表
         List<Integer> res = new ArrayList<>();
 
         if (k > n / 2) {
@@ -50,7 +50,7 @@ public class _188_buy_and_sell_stock_iv {
 
             // 从第 0 次交易开始，直到第 k 次交易
             for (int j = 0; j <= k; j++) {
-                System.out.println("   第 " + j  + "次交易");
+                System.out.println("   第 " + j + "次交易");
 
                 // 第 i + 1 天时，不持有股票时的最大收益 dp[i][j][0]，需要分情况讨论：
                 // 1. 累计交易零次，前一天肯定也交易零次，并且肯定不持有股票
@@ -85,6 +85,15 @@ public class _188_buy_and_sell_stock_iv {
                 }
             }
         }*/
+
+        for (int i = 0; i < n; i++) {
+            System.out.println();
+            for (int j = 0; j <= k; j++) {
+                for (int m = 0; m < 2; m++) {
+                    System.out.print(dp[i][j][m] + " ");
+                }
+            }
+        }
 
         return Collections.max(res);
     }

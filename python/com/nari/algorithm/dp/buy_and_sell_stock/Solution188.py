@@ -1,15 +1,16 @@
 """
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/
-题目描述：动态规划系列 —— 买卖股票4
- *      最多可以买卖 k 次
- *       手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
+题目描述：
+        动态规划系列 —— 买卖股票4
+        最多可以买卖 k 次
+        手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
 """
 
 from typing import List
 
 
-class Solution:
+class Solution188:
 
     def max_profit(self, k: int, prices: List[int]) -> int:
         if not prices or not k:

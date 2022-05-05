@@ -29,11 +29,11 @@ public class Solution714 {
         // 定义状态变量
         int[][] dp = new int[2][2];
 
-        // 初始话状态变量
+        // 初始化状态变量
         dp[0][0] = 0;
         dp[0][1] = -prices[0];
 
-        // 状态方程
+        // 状态转移方程
         for (int i = 1; i < n; i++) {
             int k = i % 2;
             int l = (i - 1) % 2;

@@ -3,9 +3,9 @@
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
 题目描述：
         动态规划系列 —— 买卖股票
-        股价不小于1： 1 <= prices[i] <= 50000
-        不限次数买卖
-        每次交易有手续费: 0 <= fee <= 50000
+        股价： 1 <= prices[i] <= 50000
+        交易次数：不限
+        交易手续费: 0 <= fee <= 50000
 """
 
 from typing import List

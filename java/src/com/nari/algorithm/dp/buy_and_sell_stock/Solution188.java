@@ -7,11 +7,15 @@ import java.util.List;
 /**
  * Author: Xu Jiong
  * Date: 2022/4/24 9:39
- * Description: 动态规划系列 —— 买卖股票4
- * 最多可以买卖 k 次
- * 手中最多可以持有一股，即如果手中有股票的话，要想再买，必须先卖出手中的股票
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/
+ * 题目描述：
+ *          动态规划系列 —— 买卖股票
+ *          股价： 0 <= prices[i] <= 1000
+ *          交易次数：0 <= k <= 100
+ *          交易手续费: 0
  */
-public class _188_buy_and_sell_stock_iv {
+public class Solution188 {
 
     public static int maxProfit(int k, int[] prices) {
         if (prices == null || prices.length == 0 || k <= 0) return 0;

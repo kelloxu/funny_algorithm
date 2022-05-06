@@ -1,4 +1,5 @@
 class Node:
+    """树节点"""
 
     def __init__(self, val=None, left=None, right=None):
         self.val = val

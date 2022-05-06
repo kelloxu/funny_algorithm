@@ -6,12 +6,15 @@ def reverse(head: LinkNode) -> LinkNode:
 
     # 迭代，直至最后一个节点
     while cur:
-        temp = cur.next
-        cur.next = prev
-        prev = cur
-        cur = temp
 
-        # cur.next, prev, cur = prev, cur, cur.next
+        # 通过中间变量实现数据交换
+        # temp = cur.next
+        # cur.next = prev
+        # prev = cur
+        # cur = temp
+
+        # 利用 python 特性，简洁、搞笑实现数据交换
+        cur.next, prev, cur = prev, cur, cur.next
     return prev
 
 

@@ -5,15 +5,34 @@ import com.nari.algorithm.model.LinkNode
 object _206_ReverseLinkedList {
 
   def reverse(head: LinkNode): LinkNode = {
-    var cur: LinkNode = head;
-    var prev: LinkNode = null;
-    while (cur != null) {
-      val temp = cur.next
-      cur.next = prev
-      prev = cur
-      cur = temp
-    }
-    prev
+
+    // 方法1：迭代
+//    var cur: LinkNode = head;
+//    var prev: LinkNode = null;
+//    while (cur != null) {
+//      val temp = cur.next
+//      cur.next = prev
+//      prev = cur
+//      cur = temp
+//    }
+//    prev
+
+    // 方法2：递归
+    reverse_recursion(head, null)
+  }
+
+  def reverse_recursion(cur: LinkNode, prev: LinkNode): LinkNode = {
+    if (cur == null) return prev
+
+    // scala 函数的形参为 val类型，不可改变，因此先将形参的值传给可变的量
+    var curVar = cur
+    var prevVar = prev
+    val temp = curVar.next
+    curVar.next = prevVar
+    prevVar = curVar
+    curVar = temp
+
+    reverse_recursion(curVar, prevVar)
   }
 
   def main(args: Array[String]): Unit = {

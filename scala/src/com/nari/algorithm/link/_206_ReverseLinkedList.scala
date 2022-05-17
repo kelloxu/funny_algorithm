@@ -43,9 +43,7 @@ object _206_ReverseLinkedList {
     val node1 = new LinkNode(8, node2)
 
     var res = reverse(node1)
-    while ( {
-      res != null
-    }) {
+    while (res != null) {
       System.out.print(res.value+ "->")
       res = res.next
     }

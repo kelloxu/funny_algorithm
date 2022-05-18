@@ -1,7 +1,34 @@
 from com.nari.algorithm.model.LinkNode import LinkNode
 
 
+def swap_pairs_recursion(cur: LinkNode, dummy: LinkNode) -> LinkNode:
+    """递归方法"""
+    if cur is None or cur.next.next is None:
+        return dummy.next
+    cur.next, cur.next.next, cur.next.next.next = cur.next.next, cur.next, cur.next.next.next
+    cur = cur.next.next
+    return swap_pairs_recursion(cur, dummy)
+
+
 def swap_paris(head: LinkNode) -> LinkNode:
+
+    # # 1. 迭代方法
+    # # 新增虚节点，指向 head
+    # dummy = LinkNode(0)
+    # dummy.next = head
+    #
+    # # cur 指向虚节点
+    # cur = dummy
+    #
+    # # 开始迭代
+    # # 1. 当 cur.next = None 时，说明已经遍历到最后一个节点，迭代可以结束了
+    # # 2. 当 cur.next = None 时，说明链表的节点数是奇数，还剩最后一个节点，无法交换了，迭代也可以结束了
+    # while cur.next and cur.next.next:
+    #     cur.next, cur.next.next, cur.next.next.next = cur.next.next, cur.next, cur.next.next.next
+    #     cur = cur.next.next  # cur 向后移动两个节点，准备下一轮迭代
+    # return dummy.next
+
+    # 2. 递归方法
     # 新增虚节点，指向 head
     dummy = LinkNode(0)
     dummy.next = head
@@ -9,13 +36,7 @@ def swap_paris(head: LinkNode) -> LinkNode:
     # cur 指向虚节点
     cur = dummy
 
-    # 开始迭代
-    # 1. 当 cur.next = None 时，说明已经遍历到最后一个节点，迭代可以结束了
-    # 2. 当 cur.next = None 时，说明链表的节点数是奇数，还剩最后一个节点，无法交换了，迭代也可以结束了
-    while cur.next and cur.next.next:
-        cur.next, cur.next.next, cur.next.next.next = cur.next.next, cur.next, cur.next.next.next
-        cur = cur.next.next  # cur 向后移动两个节点，准备下一轮迭代
-    return dummy.next
+    return swap_pairs_recursion(cur, dummy)
 
 
 def main():

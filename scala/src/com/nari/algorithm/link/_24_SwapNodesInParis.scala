@@ -9,9 +9,32 @@ import com.nari.algorithm.model.LinkNode
  */
 object _24_SwapNodesInParis {
 
+
+  def swapPairsRecursion(cur: LinkNode, dummy: LinkNode): LinkNode = {
+
+    // 递归终止条件
+    if (cur == null || cur.next == null || cur.next.next == null) {
+      return dummy.next
+    }
+
+    var curVar = cur
+
+    // 递推公式
+    val temp1 = cur.next
+    val temp2 = cur.next.next.next
+    cur.next = cur.next.next
+    cur.next.next = temp1
+    cur.next.next.next = temp2
+    curVar = cur.next.next
+
+    swapPairsRecursion(curVar, dummy)
+  }
+
+
   def swapPairs(head: LinkNode): LinkNode = {
 
-    // 新增虚节点，指向 head
+    // 1. 迭代
+/*    // 新增虚节点，指向 head
     val dumpy = new LinkNode(0)
     dumpy.next = head
 
@@ -29,7 +52,18 @@ object _24_SwapNodesInParis {
       cur.next.next.next = temp2
       cur = cur.next.next
     }
-    dumpy.next
+    dumpy.next*/
+
+    // 2. 递归
+    // 新增虚节点，指向 head
+    val dumpy = new LinkNode(0)
+    dumpy.next = head
+
+    // dumpy 赋给 cur
+    var cur = dumpy
+
+    // 递归
+    swapPairsRecursion(cur, dumpy)
   }
 
 

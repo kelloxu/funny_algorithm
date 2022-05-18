@@ -10,14 +10,36 @@ import com.nari.algorithm.model.LinkNode;
 
 public class _24_SwapNodesInPairs {
 
+    public static LinkNode swapPairsRecursion(LinkNode cur, LinkNode dummy) {
+
+        // 递归结束条件
+        if (cur == null || cur.next == null || cur.next.next == null) {
+            return dummy.next;
+        }
+
+        // 递归公式
+        LinkNode temp1 = cur.next;
+        LinkNode temp2 = cur.next.next.next;
+        cur.next = cur.next.next;
+        cur.next.next = temp1;
+        cur.next.next.next = temp2;
+
+        // 更新 cur
+        cur = cur.next.next;
+
+        // 通过“自己调用自己”实现迭代
+        return swapPairsRecursion(cur, dummy);
+    }
+
     public static LinkNode swapPairs(LinkNode head) {
 
-        // 新增虚节点，指向 head
-        LinkNode dumpy = new LinkNode(0);
-        dumpy.next = head;
+        // 1. 迭代
+/*        // 新增虚节点，指向 head
+        LinkNode dummy = new LinkNode(0);
+        dummy.next = head;
 
         // dumpy 赋给 cur
-        LinkNode cur = dumpy;
+        LinkNode cur = dummy;
 
         // 开始迭代
         // 1. 当 cur.next = None 时，说明已经遍历到最后一个节点，迭代可以结束了
@@ -30,7 +52,15 @@ public class _24_SwapNodesInPairs {
             cur.next.next.next = temp2;
             cur = cur.next.next;
         }
-        return dumpy.next;
+        return dummy.next;*/
+
+        // 2. 递归
+        LinkNode dummy = new LinkNode(0);
+        dummy.next = head;
+
+        LinkNode cur = dummy;
+
+        return swapPairsRecursion(cur, dummy);
     }
 
 
